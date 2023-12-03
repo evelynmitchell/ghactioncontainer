@@ -28,4 +28,4 @@ jobs:
         run: docker build --file Dockerfile --tag myimage:${{ github.sha }} .
 
       - name: Run tests
-        run: docker run myimage:${{ github.sha }} pytest tests/test_main.py
+        run: docker run -it --rm -p 8080:80 myimage:${{ github.sha }} pytest tests/test_main.py
