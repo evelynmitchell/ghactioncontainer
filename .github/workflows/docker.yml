@@ -25,7 +25,7 @@ jobs:
           echo "Platforms: ${{ steps.buildx.outputs.platforms }}"
 
       - name: Build Docker image
-        run: docker build --file Dockerfile --tag myimage:${{ github.sha }} .
+        run: docker build --tag myimage:${{ github.sha }} .
 
       - name: Run tests
         run: docker run myimage:${{ github.sha }} pytest tests/test_main.py
