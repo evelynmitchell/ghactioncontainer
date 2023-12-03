@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: python-slim
+    runs-on: python:3.9-slim
 
     steps:
       - name: Checkout code
